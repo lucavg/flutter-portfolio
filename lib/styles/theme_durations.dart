@@ -1,4 +1,4 @@
-import 'package:flutter_template/util/env/flavor_config.dart';
+import 'package:my_flutter_portfolio/util/env/flavor_config.dart';
 
 class ThemeDurations {
   ThemeDurations._();

@@ -137,8 +137,8 @@ void _replaceHomeScreenLine() {
 
 void _replaceDatabaseTests() {
   _replaceInFile(
-    'test/database/flutter_template_database_test.dart',
-    '''  test('FlutterTemplateDatabase should delete all tables', () async {
+    'test/database/my_flutter_portfolio_database_test.dart',
+    '''  test('MFPDatabase should delete all tables', () async {
     final resultTodos1 = await sut.select(sut.dbTodoTable).get();
     expect(resultTodos1.isEmpty, true);
 
@@ -155,7 +155,7 @@ void _replaceDatabaseTests() {
     final resultTodos3 = await sut.select(sut.dbTodoTable).get();
     expect(resultTodos3.isEmpty, true);
   });''',
-    '''  test('FlutterTemplateDatabase should delete all tables', () async {
+    '''  test('MFPDatabase should delete all tables', () async {
     //Check if table is empty
     //Add 3 records
     //Check if the table contains 3 recods
@@ -188,15 +188,15 @@ final removeCodeLines = [
   "import 'package:test_project/webservice/todo/todo_service.dart';",
   "import 'package:test_project/screen/todo/todo_list/todo_list_screen.dart';",
   "import 'package:test_project/screen/todo/todo_add/todo_add_screen.dart';",
-  "import 'package:flutter_template/database/todo/todo_dao_storage.dart';",
-  "import 'package:flutter_template/viewmodel/todo/todo_add/todo_add_viewmodel.dart';",
-  "import 'package:flutter_template/viewmodel/todo/todo_list/todo_list_viewmodel.dart';",
-  "import 'package:flutter_template/webservice/todo/todo_service.dart';",
-  "import 'package:flutter_template/repository/todo/todo_repository.dart';",
-  "import 'package:flutter_template/screen/todo/todo_add/todo_add_screen.dart';",
-  "import 'package:flutter_template/model/database/todo/db_todo_table.dart';",
-  "import 'package:flutter_template/screen/todo/todo_list/todo_list_screen.dart';",
-  "import 'package:flutter_template/model/webservice/todo/todo.dart';",
+  "import 'package:my_flutter_portfolio/database/todo/todo_dao_storage.dart';",
+  "import 'package:my_flutter_portfolio/viewmodel/todo/todo_add/todo_add_viewmodel.dart';",
+  "import 'package:my_flutter_portfolio/viewmodel/todo/todo_list/todo_list_viewmodel.dart';",
+  "import 'package:my_flutter_portfolio/webservice/todo/todo_service.dart';",
+  "import 'package:my_flutter_portfolio/repository/todo/todo_repository.dart';",
+  "import 'package:my_flutter_portfolio/screen/todo/todo_add/todo_add_screen.dart';",
+  "import 'package:my_flutter_portfolio/model/database/todo/db_todo_table.dart';",
+  "import 'package:my_flutter_portfolio/screen/todo/todo_list/todo_list_screen.dart';",
+  "import 'package:my_flutter_portfolio/model/webservice/todo/todo.dart';",
   "import '../mocks/database/todo/mock_todo_dao_storage.dart';",
   '  DbTodoTable,',
   '      case TodoAddScreen.routeName:',

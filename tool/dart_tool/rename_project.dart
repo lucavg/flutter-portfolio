@@ -1,12 +1,12 @@
 import 'dart:io';
 
-const originalProjectName = 'flutter_template';
-const originalClassNamePrefix = 'FlutterTemplate';
-const originalIOSBundleIdentifier = 'com.icapps.fluttertemplate';
-const originalAndroidPackageName = 'com.icapps.fluttertemplate';
-const originalAndroidFolderPath = 'com/icapps/fluttertemplate';
-const originalAppName = 'Flutter Template';
-const originalDescription = 'A Flutter Template to get started quickly';
+const originalProjectName = 'my_flutter_portfolio';
+const originalClassNamePrefix = 'MFP';
+const originalIOSBundleIdentifier = 'myflutterportfolio';
+const originalAndroidPackageName = 'myflutterportfolio';
+const originalAndroidFolderPath = 'myflutterportfolio';
+const originalAppName = 'My Flutter Portfolio';
+const originalDescription = 'An online portfolio built entirely in Flutter for web.';
 
 void main() {
   Logger.info('Enter application name (eg: My Cool App):');

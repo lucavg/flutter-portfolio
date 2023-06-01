@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_template/di/injectable.dart';
-import 'package:flutter_template/navigator/main_navigator.dart';
-import 'package:flutter_template/styles/theme_data.dart';
-import 'package:flutter_template/util/locale/localization_fallback_cupertino_delegate.dart';
-import 'package:flutter_template/viewmodel/global/global_viewmodel.dart';
-import 'package:flutter_template/widget/general/flavor_banner.dart';
-import 'package:flutter_template/widget/general/text_scale_factor.dart';
-import 'package:flutter_template/widget/provider/provider_widget.dart';
+import 'package:my_flutter_portfolio/di/injectable.dart';
+import 'package:my_flutter_portfolio/navigator/main_navigator.dart';
+import 'package:my_flutter_portfolio/styles/theme_data.dart';
+import 'package:my_flutter_portfolio/util/locale/localization_fallback_cupertino_delegate.dart';
+import 'package:my_flutter_portfolio/viewmodel/global/global_viewmodel.dart';
+import 'package:my_flutter_portfolio/widget/general/flavor_banner.dart';
+import 'package:my_flutter_portfolio/widget/general/text_scale_factor.dart';
+import 'package:my_flutter_portfolio/widget/provider/provider_widget.dart';
 import 'package:get/get.dart';
 
 class MyApp extends StatelessWidget {
@@ -59,8 +59,8 @@ class InternalApp extends StatelessWidget {
         locale: viewModel.locale,
         supportedLocales: viewModel.supportedLocales,
         themeMode: viewModel.themeMode,
-        theme: FlutterTemplateThemeData.lightTheme(viewModel.targetPlatform),
-        darkTheme: FlutterTemplateThemeData.darkTheme(viewModel.targetPlatform),
+        theme: MFPThemeData.lightTheme(viewModel.targetPlatform),
+        darkTheme: MFPThemeData.darkTheme(viewModel.targetPlatform),
         initialRoute: home == null ? MainNavigator.initialRoute : null,
         getPages: MainNavigator.pages,
         home: home,

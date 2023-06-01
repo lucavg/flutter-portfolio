@@ -1,6 +1,6 @@
-import 'package:flutter_template/di/injectable.dart';
-import 'package:flutter_template/styles/theme_data.dart';
+import 'package:my_flutter_portfolio/di/injectable.dart';
+import 'package:my_flutter_portfolio/styles/theme_data.dart';
 
 extension ThemeExtension on Object {
-  FlutterTemplateTheme get theme => getIt();
+  MFPTheme get theme => getIt();
 }

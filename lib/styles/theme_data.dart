@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_template/di/injectable.dart';
-import 'package:flutter_template/styles/theme_colors.dart';
-import 'package:flutter_template/styles/theme_fonts.dart';
-import 'package:flutter_template/util/theme/theme_config.dart';
+import 'package:my_flutter_portfolio/di/injectable.dart';
+import 'package:my_flutter_portfolio/styles/theme_colors.dart';
+import 'package:my_flutter_portfolio/styles/theme_fonts.dart';
+import 'package:my_flutter_portfolio/util/theme/theme_config.dart';
 import 'package:icapps_architecture/icapps_architecture.dart';
 
-class FlutterTemplateThemeData {
-  FlutterTemplateThemeData._();
+class MFPThemeData {
+  MFPThemeData._();
 
   static final _darkThemeData = ThemeData(
     fontFamily: ThemeFonts.body,
@@ -50,7 +50,7 @@ class FlutterTemplateThemeData {
   }
 }
 
-class FlutterTemplateTextTheme {
+class MFPTextTheme {
   final TextStyle titleHuge;
   final TextStyle titleBig;
   final TextStyle titleNormal;
@@ -69,7 +69,7 @@ class FlutterTemplateTextTheme {
   final TextStyle infoBodySubHeader;
   final TextStyle bodyBig;
 
-  const FlutterTemplateTextTheme({
+  const MFPTextTheme({
     required this.titleHuge,
     required this.titleBig,
     required this.titleNormal,
@@ -87,11 +87,11 @@ class FlutterTemplateTextTheme {
   });
 }
 
-class FlutterTemplateTextThemeExceptions {
-  const FlutterTemplateTextThemeExceptions();
+class MFPTextThemeExceptions {
+  const MFPTextThemeExceptions();
 }
 
-class FlutterTemplateColorsTheme {
+class MFPColorsTheme {
   final Color text;
   final Color inverseText;
   final Color errorText;
@@ -126,7 +126,7 @@ class FlutterTemplateColorsTheme {
 
   final Color debugTitleBackground;
 
-  const FlutterTemplateColorsTheme({
+  const MFPColorsTheme({
     required this.primary,
     required this.secondary,
     required this.accent,
@@ -160,24 +160,24 @@ class FlutterTemplateColorsTheme {
   });
 }
 
-enum FlutterTemplateThemeStyle {
+enum MFPThemeStyle {
   dark,
   light,
 }
 
-class FlutterTemplateTheme {
-  final FlutterTemplateTextTheme coreTextTheme;
-  final FlutterTemplateTextTheme inverseCoreTextTheme;
-  final FlutterTemplateTextTheme accentTextTheme;
-  final FlutterTemplateTextThemeExceptions exceptionsTextTheme;
-  final FlutterTemplateColorsTheme colorsTheme;
+class MFPTheme {
+  final MFPTextTheme coreTextTheme;
+  final MFPTextTheme inverseCoreTextTheme;
+  final MFPTextTheme accentTextTheme;
+  final MFPTextThemeExceptions exceptionsTextTheme;
+  final MFPColorsTheme colorsTheme;
   final bool isDarkTheme;
 
   bool get isLightTheme => !isDarkTheme;
 
   static final _instanceDark = _fromColorTheme(
     isDarkTheme: true,
-    colorTheme: const FlutterTemplateColorsTheme(
+    colorTheme: const MFPColorsTheme(
       text: ThemeColors.white,
       inverseText: ThemeColors.black,
       errorText: ThemeColors.error,
@@ -213,7 +213,7 @@ class FlutterTemplateTheme {
 
   static final _instanceLight = _fromColorTheme(
     isDarkTheme: false,
-    colorTheme: const FlutterTemplateColorsTheme(
+    colorTheme: const MFPColorsTheme(
       text: ThemeColors.black,
       inverseText: ThemeColors.white,
       errorText: ThemeColors.error,
@@ -247,14 +247,14 @@ class FlutterTemplateTheme {
     ),
   );
 
-  static FlutterTemplateTheme _fromColorTheme({
-    required FlutterTemplateColorsTheme colorTheme,
+  static MFPTheme _fromColorTheme({
+    required MFPColorsTheme colorTheme,
     required bool isDarkTheme,
   }) =>
-      FlutterTemplateTheme._(
+      MFPTheme._(
         isDarkTheme: isDarkTheme,
         colorsTheme: colorTheme,
-        coreTextTheme: FlutterTemplateTextTheme(
+        coreTextTheme: MFPTextTheme(
           titleHuge: TextStyle(fontSize: 40, color: colorTheme.text, fontFamily: ThemeFonts.title, height: 1.2),
           titleBig: TextStyle(fontSize: 30, color: colorTheme.text, fontFamily: ThemeFonts.title, height: 1.2),
           titleNormal: TextStyle(fontSize: 24, color: colorTheme.text, fontFamily: ThemeFonts.title),
@@ -270,7 +270,7 @@ class FlutterTemplateTheme {
           bodyUltraSmall: TextStyle(fontSize: 12, color: colorTheme.text, fontFamily: ThemeFonts.body),
           infoBodySubHeader: TextStyle(fontSize: 14, color: colorTheme.text, fontFamily: ThemeFonts.body, fontWeight: FontWeight.w600),
         ),
-        inverseCoreTextTheme: FlutterTemplateTextTheme(
+        inverseCoreTextTheme: MFPTextTheme(
           titleHuge: TextStyle(fontSize: 40, color: colorTheme.inverseText, fontFamily: ThemeFonts.title, height: 1.2),
           titleBig: TextStyle(fontSize: 30, color: colorTheme.inverseText, fontFamily: ThemeFonts.title, height: 1.2),
           titleNormal: TextStyle(fontSize: 24, color: colorTheme.inverseText, fontFamily: ThemeFonts.title),
@@ -286,7 +286,7 @@ class FlutterTemplateTheme {
           bodyUltraSmall: TextStyle(fontSize: 12, color: colorTheme.inverseText, fontFamily: ThemeFonts.body),
           infoBodySubHeader: TextStyle(fontSize: 14, color: colorTheme.inverseText, fontFamily: ThemeFonts.body, fontWeight: FontWeight.w600),
         ),
-        accentTextTheme: FlutterTemplateTextTheme(
+        accentTextTheme: MFPTextTheme(
           titleHuge: TextStyle(fontSize: 40, color: colorTheme.accent, fontFamily: ThemeFonts.title, height: 1.2),
           titleBig: TextStyle(fontSize: 30, color: colorTheme.accent, fontFamily: ThemeFonts.title, height: 1.2),
           titleNormal: TextStyle(fontSize: 24, color: colorTheme.accent, fontFamily: ThemeFonts.title),
@@ -302,10 +302,10 @@ class FlutterTemplateTheme {
           bodyUltraSmall: TextStyle(fontSize: 12, color: colorTheme.accent, fontFamily: ThemeFonts.body),
           infoBodySubHeader: TextStyle(fontSize: 14, color: colorTheme.accent, fontFamily: ThemeFonts.body, fontWeight: FontWeight.w600),
         ),
-        exceptionsTextTheme: const FlutterTemplateTextThemeExceptions(),
+        exceptionsTextTheme: const MFPTextThemeExceptions(),
       );
 
-  const FlutterTemplateTheme._({
+  const MFPTheme._({
     required this.coreTextTheme,
     required this.inverseCoreTextTheme,
     required this.accentTextTheme,
@@ -314,7 +314,7 @@ class FlutterTemplateTheme {
     required this.isDarkTheme,
   });
 
-  static FlutterTemplateTheme of(BuildContext context, {bool forceDark = false, bool forceLight = false}) {
+  static MFPTheme of(BuildContext context, {bool forceDark = false, bool forceLight = false}) {
     if (forceDark) return _instanceDark;
     if (forceLight) return _instanceLight;
     final themeConfigUtil = getIt<ThemeConfigUtil>();

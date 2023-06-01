@@ -1,4 +1,4 @@
-import 'package:flutter_template/util/platform/platform_util.dart';
+import 'package:my_flutter_portfolio/util/platform/platform_util.dart';
 import 'package:get/route_manager.dart';
 
 class BasePage<T> extends GetPage<T> {

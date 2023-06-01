@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_template/repository/secure_storage/auth/auth_storage.dart';
-import 'package:flutter_template/util/app_constants.dart';
+import 'package:my_flutter_portfolio/repository/secure_storage/auth/auth_storage.dart';
+import 'package:my_flutter_portfolio/util/app_constants.dart';
 import 'package:icapps_architecture/icapps_architecture.dart';
 import 'package:injectable/injectable.dart';
 

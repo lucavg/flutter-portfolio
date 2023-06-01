@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:flutter_template/navigator/main_navigator.dart';
-import 'package:flutter_template/repository/shared_prefs/local/local_storage.dart';
+import 'package:my_flutter_portfolio/navigator/main_navigator.dart';
+import 'package:my_flutter_portfolio/repository/shared_prefs/local/local_storage.dart';
 import 'package:get/get.dart';
 import 'package:icapps_architecture/icapps_architecture.dart';
 import 'package:injectable/injectable.dart';

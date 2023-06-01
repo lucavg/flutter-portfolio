@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_template/di/injectable.dart';
-import 'package:flutter_template/navigator/main_navigator.dart';
-import 'package:flutter_template/repository/secure_storage/auth/auth_storage.dart';
-import 'package:flutter_template/util/env/flavor_config.dart';
+import 'package:my_flutter_portfolio/di/injectable.dart';
+import 'package:my_flutter_portfolio/navigator/main_navigator.dart';
+import 'package:my_flutter_portfolio/repository/secure_storage/auth/auth_storage.dart';
+import 'package:my_flutter_portfolio/util/env/flavor_config.dart';
 import 'package:get/route_manager.dart';
 
 class LoginGuard extends GetMiddleware {

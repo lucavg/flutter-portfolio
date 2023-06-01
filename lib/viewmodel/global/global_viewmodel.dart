@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_template/repository/debug/debug_repository.dart';
-import 'package:flutter_template/repository/locale/locale_repository.dart';
-import 'package:flutter_template/repository/shared_prefs/local/local_storage.dart';
-import 'package:flutter_template/util/locale/localization.dart';
-import 'package:flutter_template/util/locale/localization_delegate.dart';
-import 'package:flutter_template/util/locale/localization_keys.dart';
-import 'package:flutter_template/util/theme/theme_config.dart';
+import 'package:my_flutter_portfolio/repository/debug/debug_repository.dart';
+import 'package:my_flutter_portfolio/repository/locale/locale_repository.dart';
+import 'package:my_flutter_portfolio/repository/shared_prefs/local/local_storage.dart';
+import 'package:my_flutter_portfolio/util/locale/localization.dart';
+import 'package:my_flutter_portfolio/util/locale/localization_delegate.dart';
+import 'package:my_flutter_portfolio/util/locale/localization_keys.dart';
+import 'package:my_flutter_portfolio/util/theme/theme_config.dart';
 import 'package:icapps_architecture/icapps_architecture.dart';
 import 'package:injectable/injectable.dart';
 

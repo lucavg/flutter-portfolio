@@ -1,11 +1,11 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_template/model/exceptions/bad_request_error.dart';
-import 'package:flutter_template/model/exceptions/code_error.dart';
-import 'package:flutter_template/model/exceptions/forbidden_error.dart';
-import 'package:flutter_template/model/exceptions/general_error.dart';
-import 'package:flutter_template/model/exceptions/internal_server_error.dart';
-import 'package:flutter_template/model/exceptions/no_internet_error.dart';
-import 'package:flutter_template/model/exceptions/un_authorized_error.dart';
+import 'package:my_flutter_portfolio/model/exceptions/bad_request_error.dart';
+import 'package:my_flutter_portfolio/model/exceptions/code_error.dart';
+import 'package:my_flutter_portfolio/model/exceptions/forbidden_error.dart';
+import 'package:my_flutter_portfolio/model/exceptions/general_error.dart';
+import 'package:my_flutter_portfolio/model/exceptions/internal_server_error.dart';
+import 'package:my_flutter_portfolio/model/exceptions/no_internet_error.dart';
+import 'package:my_flutter_portfolio/model/exceptions/un_authorized_error.dart';
 import 'package:icapps_architecture/icapps_architecture.dart';
 import 'package:injectable/injectable.dart';
 

@@ -1,4 +1,4 @@
-# Flutter Template
+# My Flutter Portfolio
 
 [![Build Status](https://app.travis-ci.com/icapps/flutter-template.svg?branch=master)](https://app.travis-ci.com/icapps/flutter-template)
 [![Coverage Status](https://coveralls.io/repos/github/icapps/flutter-template/badge.svg)](https://coveralls.io/github/icapps/flutter-template)

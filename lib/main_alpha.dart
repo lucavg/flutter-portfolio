@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_template/app.dart';
-import 'package:flutter_template/di/environments.dart';
-import 'package:flutter_template/di/injectable.dart';
-import 'package:flutter_template/main_common.dart';
-import 'package:flutter_template/util/env/flavor_config.dart';
+import 'package:my_flutter_portfolio/app.dart';
+import 'package:my_flutter_portfolio/di/environments.dart';
+import 'package:my_flutter_portfolio/di/injectable.dart';
+import 'package:my_flutter_portfolio/main_common.dart';
+import 'package:my_flutter_portfolio/util/env/flavor_config.dart';
 
 Future<void> main() async {
   await wrapMain(() async {

@@ -1,6 +1,6 @@
 import 'dart:io';
 
-const packageName = 'flutter_template';
+const packageName = 'my_flutter_portfolio';
 
 void main() {
   Logger.debug('====');

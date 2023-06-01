@@ -1,5 +1,5 @@
-import 'package:flutter_template/model/snackbar/snackbar_data.dart';
-import 'package:flutter_template/styles/theme_colors.dart';
+import 'package:my_flutter_portfolio/model/snackbar/snackbar_data.dart';
+import 'package:my_flutter_portfolio/styles/theme_colors.dart';
 import 'package:get/route_manager.dart';
 
 class SnackBarUtil {

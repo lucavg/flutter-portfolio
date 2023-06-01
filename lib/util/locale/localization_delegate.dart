@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_template/util/locale/localization.dart';
-import 'package:flutter_template/util/locale/localization_overrides.dart';
+import 'package:my_flutter_portfolio/util/locale/localization.dart';
+import 'package:my_flutter_portfolio/util/locale/localization_overrides.dart';
 
 //============================================================//
 //THIS FILE IS AUTO GENERATED. DO NOT EDIT//

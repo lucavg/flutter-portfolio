@@ -1,7 +1,7 @@
-import 'package:flutter_template/di/injectable.dart';
-import 'package:flutter_template/navigator/main_navigator.dart';
-import 'package:flutter_template/util/env/flavor_config.dart';
-import 'package:flutter_template/util/locale/localization_keys.dart';
+import 'package:my_flutter_portfolio/di/injectable.dart';
+import 'package:my_flutter_portfolio/navigator/main_navigator.dart';
+import 'package:my_flutter_portfolio/util/env/flavor_config.dart';
+import 'package:my_flutter_portfolio/util/locale/localization_keys.dart';
 import 'package:get/get.dart';
 import 'package:icapps_architecture/icapps_architecture.dart';
 import 'package:injectable/injectable.dart';
@@ -32,7 +32,7 @@ class ErrorUtil {
     } else if (error is LocalizedError) {
       key = error.getLocalizedKey();
     } else {
-      logger.warning('Caught an error that is not handled by the FlutterTemplateError $error');
+      logger.warning('Caught an error that is not handled by the MFPError $error');
       key = LocalizationKeys.errorGeneral;
     }
     showErrorWithLocaleKey(key);

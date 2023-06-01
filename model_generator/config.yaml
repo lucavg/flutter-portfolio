@@ -1,14 +1,60 @@
-##################################################################################
-#####                                TODO                                    #####
-##################################################################################
-Todo:
-  path: webservice/todo/
+ScreenType:
+  path: utils/
+  type: enum
+  uppercase_enums: false
   properties:
-    id:
-      type: int
+    mobile:
+      value: Mobile
+    tab:
+      value: Tab
+    web:
+      value: Web
+
+Tech:
+  path: projects/
+  properties:
+    id: int
     title:
       required: true
       type: String
-    completed:
+    techType: TechType
+
+TechType:
+  path: projects/
+  type: enum
+  uppercase_enums: false
+  properties:
+    flutter:
+      value: Flutter
+    java:
+      value: Java
+
+ProjectType:
+  path: projects/
+  type: enum
+  uppercase_enums: false
+  properties:
+    mobile:
+      value: Mobile
+    web:
+      value: Web
+    fullStack:
+      value: FullStack
+    backend:
+      value: backend
+    frontend:
+      value: frontend
+
+Project:
+  path: projects/
+  properties:
+    id: int
+    title:
+      required: true
+      type: String
+    description:
       required: true
       type: bool
+    projectType:
+      type: ProjectType
+    techStack: List<Tech>
