@@ -1,14 +1,9 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
-import 'package:drift/drift.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:flutter_template/database/flutter_template_database.dart';
-import 'package:flutter_template/di/db/setup_drift_none.dart'
-    if (dart.library.io) 'package:flutter_template/di/db/setup_drift_io.dart'
-    if (dart.library.js) 'package:flutter_template/di/db/setup_drift_web.dart';
 import 'package:flutter_template/di/injectable.config.dart';
 import 'package:flutter_template/navigator/middle_ware/init_middle_ware.dart';
 import 'package:flutter_template/repository/secure_storage/secure_storage.dart';
@@ -54,12 +49,6 @@ abstract class RegisterModule {
   @singleton
   ConnectivityHelper connectivityHelper() => ConnectivityHelper();
 
-  @singleton
-  @preResolve
-  Future<DatabaseConnection> provideDatabaseConnection() {
-    return createDriftDatabaseConnection('db');
-  }
-
   @lazySingleton
   FirebaseAnalytics provideFirebaseAnalytics() => FirebaseAnalytics.instance;
 
@@ -94,9 +83,6 @@ abstract class RegisterModule {
     dio.interceptors.add(interceptor);
     return dio;
   }
-
-  @lazySingleton
-  FlutterTemplateDatabase provideFlutterTemplateDatabase(DatabaseConnection databaseConnection) => FlutterTemplateDatabase.connect(databaseConnection);
 }
 
 dynamic _parseAndDecode(String response) => jsonDecode(response);

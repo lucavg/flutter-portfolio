@@ -2,11 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_template/navigator/main_navigator.get_x_navigator.dart';
 import 'package:flutter_template/navigator/middle_ware/analytics_permission_guard.dart';
 import 'package:flutter_template/navigator/middle_ware/authentication_guard.dart';
-import 'package:flutter_template/screen/debug/debug_screen.dart';
-import 'package:flutter_template/screen/todo/todo_list/todo_list_screen.dart';
 import 'package:flutter_template/widget/provider/data_provider_widget.dart';
 import 'package:get_x_navigation_generator_annotations/get_x_navigation_generator_annotations.dart';
-
 
 @GetXRoute(
   navigationType: NavigationType.popAllAndPush,
@@ -32,10 +29,7 @@ class HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       body: IndexedStack(
         index: _currentIndex,
-        children: const [
-          TodoListScreen(),
-          DebugScreen(),
-        ],
+        children: const [],
       ),
       bottomNavigationBar: DataProviderWidget(
         childBuilder: (context, theme, localization) => BottomNavigationBar(

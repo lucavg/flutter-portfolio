@@ -4,7 +4,6 @@ import 'package:flutter_template/di/environments.dart';
 import 'package:flutter_template/di/injectable.dart';
 import 'package:flutter_template/main_common.dart';
 import 'package:flutter_template/util/env/flavor_config.dart';
-import 'package:flutter_template/util/inspector/database_inspector.dart';
 import 'package:flutter_template/util/inspector/local_storage_inspector.dart';
 import 'package:flutter_template/util/inspector/niddler.dart';
 
@@ -25,7 +24,6 @@ Future<void> main() async {
     // ignore: avoid_print
     print('Starting app from main.dart');
     await configureDependencies(Environments.dev);
-    await addDatabaseInspector();
     await initAllStorageInspectors();
 
     runApp(const MyApp());

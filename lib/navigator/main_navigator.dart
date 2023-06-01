@@ -1,5 +1,3 @@
-import 'package:drift/drift.dart';
-import 'package:drift_db_viewer/drift_db_viewer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_template/model/snackbar/snackbar_data.dart';
 import 'package:flutter_template/navigator/main_navigator.get_x_navigator.dart';
@@ -28,8 +26,6 @@ class MainNavigator extends BaseNavigator {
   static final List<GetPage> pages = BaseNavigator.pages;
 
   void closeDialog() async => Get.back<void>();
-
-  Future<void> goToDatabase(GeneratedDatabase db) async => Get.to<void>(DriftDbViewer(db));
 
   void showErrorWithLocaleKey(String errorKey, {List<dynamic>? args}) => _errorUtil.showErrorWithLocaleKey(errorKey, args: args);
 
