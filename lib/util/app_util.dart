@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 import 'package:my_flutter_portfolio/model/utils/screen_type.dart';
+import 'package:my_flutter_portfolio/util/app_constants.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 @lazySingleton
@@ -26,11 +27,11 @@ class AppUtil {
     return MediaQuery.of(context).size.height;
   }
 
-  static ScreenType getScreenType(BuildContext context) {
+  ScreenType getScreenType(BuildContext context) {
     final scrWidth = getMqWidth(context);
-    if (scrWidth > 915) {
+    if (scrWidth > AppConstants.largeScreenWidth) {
       return ScreenType.web;
-    } else if (scrWidth < 650) {
+    } else if (scrWidth < AppConstants.mediumScreenWidth) {
       return ScreenType.mobile;
     }
     return ScreenType.tab;

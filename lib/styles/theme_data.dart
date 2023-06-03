@@ -58,6 +58,8 @@ class MFPTextTheme {
 
   final TextStyle titleListItem;
 
+  final TextStyle appBarAction;
+
   final TextStyle labelButtonBig;
   final TextStyle labelButtonBigDisabled;
   final TextStyle labelButtonSmall;
@@ -75,6 +77,7 @@ class MFPTextTheme {
     required this.titleNormal,
     required this.titleSmall,
     required this.titleListItem,
+    required this.appBarAction,
     required this.labelButtonBig,
     required this.labelButtonBigDisabled,
     required this.labelButtonSmall,
@@ -94,11 +97,15 @@ class MFPTextThemeExceptions {
 class MFPColorsTheme {
   final Color text;
   final Color inverseText;
+  final Color neonColor;
+  final Color cardColor;
   final Color errorText;
   final Color buttonTextDisabled;
   final Color primary;
   final Color secondary;
   final Color accent;
+  final Color navBar;
+  final Color navBarIcon;
   final Color background;
   final Color permissionScreenBackground;
   final Color inverseBackground;
@@ -129,7 +136,11 @@ class MFPColorsTheme {
   const MFPColorsTheme({
     required this.primary,
     required this.secondary,
+    required this.neonColor,
+    required this.cardColor,
     required this.accent,
+    required this.navBar,
+    required this.navBarIcon,
     required this.background,
     required this.permissionScreenBackground,
     required this.inverseBackground,
@@ -178,13 +189,17 @@ class MFPTheme {
   static final _instanceDark = _fromColorTheme(
     isDarkTheme: true,
     colorTheme: const MFPColorsTheme(
-      text: ThemeColors.white,
-      inverseText: ThemeColors.black,
+      text: ThemeColors.text,
+      inverseText: ThemeColors.textLight,
+      neonColor: ThemeColors.neonColor,
+      cardColor: ThemeColors.cardColor,
       errorText: ThemeColors.error,
       primary: ThemeColors.primary,
       accent: ThemeColors.accent,
+      navBar: ThemeColors.nav,
+      navBarIcon: ThemeColors.navIcon,
       secondary: ThemeColors.white,
-      background: ThemeColors.black,
+      background: ThemeColors.background,
       permissionScreenBackground: ThemeColors.primary,
       inverseBackground: ThemeColors.white,
       disabled: ThemeColors.disabledGrey,
@@ -214,11 +229,15 @@ class MFPTheme {
   static final _instanceLight = _fromColorTheme(
     isDarkTheme: false,
     colorTheme: const MFPColorsTheme(
-      text: ThemeColors.black,
-      inverseText: ThemeColors.white,
+      text: ThemeColors.textLight,
+      inverseText: ThemeColors.text,
+      neonColor: ThemeColors.neonColor,
+      cardColor: ThemeColors.cardColor,
       errorText: ThemeColors.error,
       primary: ThemeColors.primary,
       accent: ThemeColors.accent,
+      navBar: ThemeColors.nav,
+      navBarIcon: ThemeColors.navIcon,
       secondary: ThemeColors.black,
       background: ThemeColors.white,
       permissionScreenBackground: ThemeColors.white,
@@ -260,6 +279,7 @@ class MFPTheme {
           titleNormal: TextStyle(fontSize: 24, color: colorTheme.text, fontFamily: ThemeFonts.title),
           titleSmall: TextStyle(fontSize: 18, color: colorTheme.text, fontFamily: ThemeFonts.title),
           titleListItem: TextStyle(fontSize: 18, color: colorTheme.text, fontFamily: ThemeFonts.title, fontWeight: FontWeight.bold),
+          appBarAction: TextStyle(fontSize: 13, color: colorTheme.text, fontFamily: ThemeFonts.body),
           labelButtonBig: TextStyle(fontSize: 16, color: colorTheme.text, fontFamily: ThemeFonts.button, fontWeight: FontWeight.bold),
           labelButtonBigDisabled: TextStyle(fontSize: 16, color: colorTheme.disabled, fontFamily: ThemeFonts.button, fontWeight: FontWeight.bold),
           labelButtonSmall: TextStyle(fontSize: 14, color: colorTheme.text, fontFamily: ThemeFonts.button, fontWeight: FontWeight.bold),
@@ -276,6 +296,7 @@ class MFPTheme {
           titleNormal: TextStyle(fontSize: 24, color: colorTheme.inverseText, fontFamily: ThemeFonts.title),
           titleSmall: TextStyle(fontSize: 18, color: colorTheme.inverseText, fontFamily: ThemeFonts.title),
           titleListItem: TextStyle(fontSize: 18, color: colorTheme.inverseText, fontFamily: ThemeFonts.title, fontWeight: FontWeight.bold),
+          appBarAction: TextStyle(fontSize: 13, color: colorTheme.inverseText, fontFamily: ThemeFonts.body),
           labelButtonBig: TextStyle(fontSize: 16, color: colorTheme.inverseText, fontFamily: ThemeFonts.button, fontWeight: FontWeight.bold),
           labelButtonBigDisabled: TextStyle(fontSize: 16, color: colorTheme.disabled, fontFamily: ThemeFonts.button, fontWeight: FontWeight.bold),
           labelButtonSmall: TextStyle(fontSize: 14, color: colorTheme.inverseText, fontFamily: ThemeFonts.button, fontWeight: FontWeight.bold),
@@ -292,6 +313,7 @@ class MFPTheme {
           titleNormal: TextStyle(fontSize: 24, color: colorTheme.accent, fontFamily: ThemeFonts.title),
           titleSmall: TextStyle(fontSize: 18, color: colorTheme.accent, fontFamily: ThemeFonts.title),
           titleListItem: TextStyle(fontSize: 18, color: colorTheme.accent, fontFamily: ThemeFonts.title, fontWeight: FontWeight.bold),
+          appBarAction: TextStyle(fontSize: 13, color: colorTheme.accent, fontFamily: ThemeFonts.body),
           labelButtonBig: TextStyle(fontSize: 16, color: colorTheme.accent, fontFamily: ThemeFonts.button, fontWeight: FontWeight.bold),
           labelButtonBigDisabled: TextStyle(fontSize: 16, color: colorTheme.disabled, fontFamily: ThemeFonts.button, fontWeight: FontWeight.bold),
           labelButtonSmall: TextStyle(fontSize: 14, color: colorTheme.accent, fontFamily: ThemeFonts.button, fontWeight: FontWeight.bold),

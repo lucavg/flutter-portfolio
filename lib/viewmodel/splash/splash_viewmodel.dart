@@ -17,6 +17,6 @@ class SplashViewModel with ChangeNotifierEx {
 
   Future<void> init() async {
     await _localStorage.checkForNewInstallation();
-    unawaited(_navigator.goToHomeScreen());
+    _navigator.goToHomeScreen();
   }
 }
