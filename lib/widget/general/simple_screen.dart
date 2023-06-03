@@ -70,42 +70,40 @@ class _SimpleScreenState extends State<SimpleScreen> {
                       return Scaffold(
                         extendBody: true,
                         backgroundColor: theme.colorsTheme.background,
-                        floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
-                        floatingActionButton: isMobileScreen
-                            ? const SizedBox()
-                            : Padding(
-                                padding: const EdgeInsets.only(
-                                  top: 16,
-                                  right: 16,
-                                ),
-                                child: AnimatedOpacity(
-                                  opacity: isMobileScreen ? 0 : 1,
-                                  duration: const Duration(milliseconds: 700),
-                                  child: FloatingActionButton(
-                                    backgroundColor: theme.isDarkTheme ? theme.colorsTheme.neonColor : theme.colorsTheme.accent,
-                                    onPressed: () {},
-                                    child: AnimateIcons(
-                                      startIcon: theme.isDarkTheme ? Icons.light_mode : Icons.dark_mode,
-                                      size: 30.0,
-                                      controller: AnimateIconController(),
-                                      startTooltip: theme.isDarkTheme ? 'Dark Mode' : 'Light Mode',
-                                      endTooltip: theme.isDarkTheme ? 'Dark Mode' : 'Light Mode',
-                                      onStartIconPress: () {
-                                        viewModel.updateThemeMode(theme.isDarkTheme ? ThemeMode.light : ThemeMode.dark);
-                                        return true;
-                                      },
-                                      onEndIconPress: () {
-                                        viewModel.updateThemeMode(theme.isDarkTheme ? ThemeMode.light : ThemeMode.dark);
-                                        return true;
-                                      },
-                                      duration: const Duration(milliseconds: 500),
-                                      startIconColor: Colors.deepPurple,
-                                      endIconColor: Colors.deepOrange,
-                                      clockwise: false,
-                                    ),
-                                  ),
-                                ),
+                        floatingActionButtonLocation: isMobileScreen ? FloatingActionButtonLocation.endFloat : FloatingActionButtonLocation.endTop,
+                        floatingActionButton: Padding(
+                          padding: EdgeInsets.only(
+                            top: isMobileScreen ? 0 : 16,
+                            right: isMobileScreen ? 0 : 16,
+                          ),
+                          child: AnimatedOpacity(
+                            opacity: 1,
+                            duration: const Duration(milliseconds: 700),
+                            child: FloatingActionButton(
+                              backgroundColor: theme.isDarkTheme ? theme.colorsTheme.neonColor : theme.colorsTheme.accent,
+                              onPressed: () {},
+                              child: AnimateIcons(
+                                startIcon: theme.isDarkTheme ? Icons.light_mode : Icons.dark_mode,
+                                size: 30.0,
+                                controller: AnimateIconController(),
+                                startTooltip: theme.isDarkTheme ? 'Dark Mode' : 'Light Mode',
+                                endTooltip: theme.isDarkTheme ? 'Dark Mode' : 'Light Mode',
+                                onStartIconPress: () {
+                                  viewModel.updateThemeMode(theme.isDarkTheme ? ThemeMode.light : ThemeMode.dark);
+                                  return true;
+                                },
+                                onEndIconPress: () {
+                                  viewModel.updateThemeMode(theme.isDarkTheme ? ThemeMode.light : ThemeMode.dark);
+                                  return true;
+                                },
+                                duration: const Duration(milliseconds: 500),
+                                startIconColor: Colors.deepPurple,
+                                endIconColor: Colors.deepOrange,
+                                clockwise: false,
                               ),
+                            ),
+                          ),
+                        ),
                         bottomNavigationBar: AppUtil.getMqWidth(context) < AppConstants.mediumScreenWidth
                             ? Container(
                                 clipBehavior: Clip.antiAlias,
@@ -124,8 +122,10 @@ class _SimpleScreenState extends State<SimpleScreen> {
                                       viewModel.navigateTo(index);
                                     });
                                   },
-                                  selectedItemColor: theme.colorsTheme.neonColor,
-                                  unselectedItemColor: theme.colorsTheme.neonColor.withOpacity(0.5),
+                                  showSelectedLabels: true,
+                                  showUnselectedLabels: false,
+                                  selectedItemColor: theme.isDarkTheme ? theme.colorsTheme.neonColor : theme.colorsTheme.appBarAction,
+                                  unselectedItemColor: theme.isDarkTheme ? theme.colorsTheme.appBarAction.withOpacity(0.5) : theme.colorsTheme.appBarAction.withOpacity(0.7),
                                   unselectedIconTheme: IconThemeData(
                                     color: theme.colorsTheme.background,
                                   ),
