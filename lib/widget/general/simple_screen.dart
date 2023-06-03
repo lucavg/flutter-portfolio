@@ -4,6 +4,7 @@ import 'package:my_flutter_portfolio/styles/theme_assets.dart';
 import 'package:my_flutter_portfolio/util/app_constants.dart';
 import 'package:my_flutter_portfolio/util/app_util.dart';
 import 'package:my_flutter_portfolio/viewmodel/general/simple_screen_viewmodel.dart';
+import 'package:my_flutter_portfolio/widget/general/icon_switch.dart';
 import 'package:my_flutter_portfolio/widget/general/status_bar.dart';
 import 'package:my_flutter_portfolio/widget/general/styled/my_flutter_portfolio_progress_indicator.dart';
 import 'package:my_flutter_portfolio/widget/general/svg_icon.dart';
@@ -49,6 +50,7 @@ class _SimpleScreenState extends State<SimpleScreen> {
             isDarkStyle: widget.isDarkTheme,
             child: LayoutBuilder(
               builder: (context, constraints) {
+                final isMobileScreen = (AppUtil.getMqWidth(context) < AppConstants.mediumScreenWidth);
                 return SafeArea(
                   child: Builder(
                     builder: (context) {
@@ -68,6 +70,42 @@ class _SimpleScreenState extends State<SimpleScreen> {
                       return Scaffold(
                         extendBody: true,
                         backgroundColor: theme.colorsTheme.background,
+                        floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
+                        floatingActionButton: isMobileScreen
+                            ? const SizedBox()
+                            : Padding(
+                                padding: const EdgeInsets.only(
+                                  top: 16,
+                                  right: 16,
+                                ),
+                                child: AnimatedOpacity(
+                                  opacity: isMobileScreen ? 0 : 1,
+                                  duration: const Duration(milliseconds: 700),
+                                  child: FloatingActionButton(
+                                    backgroundColor: theme.isDarkTheme ? theme.colorsTheme.neonColor : theme.colorsTheme.accent,
+                                    onPressed: () {},
+                                    child: AnimateIcons(
+                                      startIcon: theme.isDarkTheme ? Icons.light_mode : Icons.dark_mode,
+                                      size: 30.0,
+                                      controller: AnimateIconController(),
+                                      startTooltip: theme.isDarkTheme ? 'Dark Mode' : 'Light Mode',
+                                      endTooltip: theme.isDarkTheme ? 'Dark Mode' : 'Light Mode',
+                                      onStartIconPress: () {
+                                        viewModel.updateThemeMode(theme.isDarkTheme ? ThemeMode.light : ThemeMode.dark);
+                                        return true;
+                                      },
+                                      onEndIconPress: () {
+                                        viewModel.updateThemeMode(theme.isDarkTheme ? ThemeMode.light : ThemeMode.dark);
+                                        return true;
+                                      },
+                                      duration: const Duration(milliseconds: 500),
+                                      startIconColor: Colors.deepPurple,
+                                      endIconColor: Colors.deepOrange,
+                                      clockwise: false,
+                                    ),
+                                  ),
+                                ),
+                              ),
                         bottomNavigationBar: AppUtil.getMqWidth(context) < AppConstants.mediumScreenWidth
                             ? Container(
                                 clipBehavior: Clip.antiAlias,
@@ -134,6 +172,7 @@ class _SimpleScreenState extends State<SimpleScreen> {
                                 ),
                                 child: NavigationRail(
                                   backgroundColor: theme.colorsTheme.navBar,
+                                  elevation: 5,
                                   onDestinationSelected: (int index) {
                                     setState(() {
                                       viewModel.navigateTo(index);
@@ -191,13 +230,14 @@ class _SimpleScreenState extends State<SimpleScreen> {
                                   ],
                                   labelType: NavigationRailLabelType.all,
                                   selectedIconTheme: IconThemeData(
-                                    color: theme.colorsTheme.neonColor,
+                                    color: theme.isDarkTheme ? theme.colorsTheme.neonColor : theme.colorsTheme.appBarAction,
                                   ),
                                   selectedLabelTextStyle: theme.coreTextTheme.bodyNormal.copyWith(
-                                    color: theme.colorsTheme.neonColor,
+                                    color: theme.isDarkTheme ? theme.colorsTheme.neonColor : theme.colorsTheme.appBarAction,
+                                    fontWeight: FontWeight.w900,
                                   ),
                                   unselectedLabelTextStyle: theme.coreTextTheme.bodyNormal.copyWith(
-                                    color: theme.colorsTheme.neonColor.withOpacity(0.5),
+                                    color: theme.isDarkTheme ? theme.colorsTheme.appBarAction.withOpacity(0.5) : theme.colorsTheme.appBarAction.withOpacity(0.7),
                                   ),
                                   leading: Column(
                                     children: [
@@ -205,7 +245,7 @@ class _SimpleScreenState extends State<SimpleScreen> {
                                       SvgIcon(
                                         svgAsset: ThemeAssets.portfolioLogo(context),
                                         size: 80,
-                                        color: theme.colorsTheme.neonColor,
+                                        color: theme.isDarkTheme ? theme.colorsTheme.neonColor : theme.colorsTheme.appBarAction,
                                       )
                                     ],
                                   ),
